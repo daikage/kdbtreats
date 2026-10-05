@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import db, { transaction } from '../db.js';
+import db, { transaction } from '../db/index.js';
 
 const router = Router();
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const ALLOWED_STATUSES = [
+  'pending', 'confirmed', 'preparing', 'out_for_delivery', 'delivered', 'cancelled',
+];
 
 function validateOrder(body) {
   const errors = [];

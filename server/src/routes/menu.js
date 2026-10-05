@@ -1,81 +1,80 @@
 import { Router } from 'express';
-import db, { getCategories, getMenuItems } from '../db.js';
+import db, { getCategories, getMenuItems, mapItem } from '../db/index.js';
 
 const router = Router();
 
 /** GET /api/menu — categories + items (supports ?category= and ?featured=) */
-router.get('/menu', (req, res) => {
-  const { category, featured } = req.query;
-  let items = getMenuItems();
+router.get('/menu', async (req, res, next) => {
+  try {
+    const { category, featured } = req.query;
+    let items = await getMenuItems();
 
-  if (category && category !== 'all') {
-    items = items.filter((i) => i.category === category);
-  }
-  if (featured === 'true') {
-    items = items.filter((i) => i.isFeatured);
-  }
+    if (category && category !== 'all') {
+      items = items.filter((i) => i.category === category);
+    }
+    if (featured === 'true') {
+      items = items.filter((i) => i.isFeatured);
+    }
 
-  res.json({ categories: getCategories(), items });
+    res.json({ categories: await getCategories(), items });
+  } catch (err) {
+    next(err);
+  }
 });
 
 /** GET /api/categories */
-router.get('/categories', (_req, res) => {
-  res.json({ categories: getCategories() });
+router.get('/categories', async (_req, res, next) => {
+  try {
+    res.json({ categories: await getCategories() });
+  } catch (err) {
+    next(err);
+  }
 });
 
 /** GET /api/menu/:id */
-router.get('/menu/:id', (req, res) => {
-  const row = db
-    .prepare('SELECT * FROM menu_items WHERE id = ?')
-    .get(Number(req.params.id));
-
-  if (!row) return res.status(404).json({ error: 'Menu item not found' });
-
-  res.json({
-    item: {
-      id: row.id,
-      name: row.name,
-      description: row.description,
-      price: row.price,
-      category: row.category,
-      image: row.image,
-      spiceLevel: row.spice_level,
-      isAvailable: !!row.is_available,
-      isFeatured: !!row.is_featured,
-    },
-  });
+router.get('/menu/:id', async (req, res, next) => {
+  try {
+    const row = await db.first('SELECT * FROM menu_items WHERE id = ?', [Number(req.params.id)]);
+    if (!row) return res.status(404).json({ error: 'Menu item not found' });
+    res.json({ item: mapItem(row) });
+  } catch (err) {
+    next(err);
+  }
 });
 
-/** PATCH /api/menu/:id — toggle availability / featured (admin) */
-router.patch('/menu/:id', (req, res) => {
-  const id = Number(req.params.id);
-  const existing = db.prepare('SELECT * FROM menu_items WHERE id = ?').get(id);
-  if (!existing) return res.status(404).json({ error: 'Menu item not found' });
+/** PATCH /api/menu/:id — update price / availability / featured (admin) */
+router.patch('/menu/:id', async (req, res, next) => {
+  try {
+    const id = Number(req.params.id);
+    const existing = await db.first('SELECT * FROM menu_items WHERE id = ?', [id]);
+    if (!existing) return res.status(404).json({ error: 'Menu item not found' });
 
-  const { isAvailable, isFeatured, price } = req.body ?? {};
+    const { isAvailable, isFeatured, price } = req.body ?? {};
 
-  db.prepare(`
-    UPDATE menu_items SET
-      is_available = COALESCE(?, is_available),
-      is_featured  = COALESCE(?, is_featured),
-      price        = COALESCE(?, price)
-    WHERE id = ?
-  `).run(
-    isAvailable === undefined ? null : isAvailable ? 1 : 0,
-    isFeatured === undefined ? null : isFeatured ? 1 : 0,
-    price === undefined ? null : Number(price),
-    id,
-  );
+    if (price !== undefined && (typeof price !== 'number' || price < 0 || Number.isNaN(price))) {
+      return res.status(400).json({ error: 'price must be a non-negative number' });
+    }
 
-  const updated = db.prepare('SELECT * FROM menu_items WHERE id = ?').get(id);
-  res.json({
-    item: {
-      ...updated,
-      spiceLevel: updated.spice_level,
-      isAvailable: !!updated.is_available,
-      isFeatured: !!updated.is_featured,
-    },
-  });
+    // COALESCE keeps the existing value when a field is omitted.
+    await db.run(
+      `UPDATE menu_items SET
+         is_available = COALESCE(?, is_available),
+         is_featured  = COALESCE(?, is_featured),
+         price        = COALESCE(?, price)
+       WHERE id = ?`,
+      [
+        isAvailable === undefined ? null : Boolean(isAvailable),
+        isFeatured === undefined ? null : Boolean(isFeatured),
+        price === undefined ? null : price,
+        id,
+      ],
+    );
+
+    const updated = await db.first('SELECT * FROM menu_items WHERE id = ?', [id]);
+    res.json({ item: mapItem(updated) });
+  } catch (err) {
+    next(err);
+  }
 });
 
 export default router;
