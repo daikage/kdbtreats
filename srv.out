@@ -1,0 +1,3 @@
+KDB Treats API listening on http://localhost:4000
+Health check: http://localhost:4000/api/health
+2026-10-05T15:38:43.348Z POST /api/orders
