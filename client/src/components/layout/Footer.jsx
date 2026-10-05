@@ -36,6 +36,7 @@ export default function Footer() {
               <Link to="/menu" className="footer__col-link">Menu</Link>
               <Link to="/about" className="footer__col-link">Our Story</Link>
               <Link to="/contact" className="footer__col-link">Contact</Link>
+              <Link to="/admin" className="footer__col-link">Admin</Link>
             </div>
           </div>
 

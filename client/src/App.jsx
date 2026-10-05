@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import AdminLayout from './pages/admin/AdminLayout';
 
 function AppContent() {
   const location = useLocation();
@@ -21,6 +22,16 @@ function AppContent() {
 
   // Stable identity so the Preloader animation effect is not restarted.
   const handlePreloaderComplete = useCallback(() => setPreloaderDone(true), []);
+
+  // The admin panel is a separate app shell — no preloader, cursor chrome,
+  // navbar or footer.
+  if (location.pathname.startsWith('/admin')) {
+    return (
+      <Routes>
+        <Route path="/admin/*" element={<AdminLayout />} />
+      </Routes>
+    );
+  }
 
   return (
     <>

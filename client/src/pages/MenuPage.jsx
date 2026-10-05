@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PageTransition from '../components/layout/PageTransition';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import CounterNumber from '../components/ui/CounterNumber';
-import { menuItems, categories, formatPrice } from '../data/menu';
+import { formatPrice } from '../data/menu';
+import { useMenu } from '../hooks/useMenu';
 import { useCart } from '../context/CartContext';
 
 export default function MenuPage() {
@@ -11,6 +12,9 @@ export default function MenuPage() {
   const catParam = searchParams.get('cat') || 'all';
   const [searchQuery, setSearchQuery] = useState('');
   const { addItem, openCart, items: cartItems, totalPrice } = useCart();
+
+  // Live menu from the API (gracefully falls back to bundled data).
+  const { items: menuItems, categories } = useMenu();
 
   // Filter logic
   const filteredItems = menuItems.filter(item => {

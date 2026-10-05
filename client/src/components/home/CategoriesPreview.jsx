@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { categories, menuItems } from '../../data/menu';
+import { useMenu } from '../../hooks/useMenu';
 import ScrollReveal from '../ui/ScrollReveal';
 
 export default function CategoriesPreview() {
+  // Live menu from the API (falls back to bundled data).
+  const { items: menuItems, categories } = useMenu();
+
   const displayCategories = categories.filter(c => c.id !== 'all').slice(0, 4);
 
   const handleMouseMove = (e) => {

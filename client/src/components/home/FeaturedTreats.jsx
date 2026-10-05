@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { menuItems, formatPrice } from '../../data/menu';
+import { formatPrice } from '../../data/menu';
+import { useMenu } from '../../hooks/useMenu';
 import { useCart } from '../../context/CartContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,20 +11,24 @@ export default function FeaturedTreats() {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
   const { addItem, openCart } = useCart();
-  
+
+  // Live menu from the API (falls back to bundled data).
+  const { items: menuItems } = useMenu();
+
   const featured = menuItems.filter(item => item.isFeatured).slice(0, 6);
 
   useEffect(() => {
     // Only apply horizontal scroll on desktop
     if (window.innerWidth < 768) return;
+    if (!containerRef.current || !trackRef.current) return;
 
     const container = containerRef.current;
     const track = trackRef.current;
-    
+
     // Calculate how far to move left
     const walk = track.scrollWidth - window.innerWidth + 100; // 100 padding
 
-    gsap.to(track, {
+    const tween = gsap.to(track, {
       x: -walk,
       ease: 'none',
       scrollTrigger: {
@@ -33,7 +38,13 @@ export default function FeaturedTreats() {
         end: () => `+=${walk}`
       }
     });
-  }, []);
+
+    // Rebuild if the featured list changes (e.g. live API data arrives).
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, [featured.length]);
 
   const handleAdd = (item) => {
     addItem(item);
