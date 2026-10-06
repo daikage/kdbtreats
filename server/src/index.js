@@ -45,6 +45,6 @@ app.use((err, _req, res, _next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`KDB Treats API listening on http://localhost:${PORT}`);
+  console.log(`KDA Treats API listening on http://localhost:${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/api/health`);
 });

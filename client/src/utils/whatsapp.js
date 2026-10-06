@@ -1,12 +1,12 @@
 /**
- * KDB Treats — WhatsApp Checkout Utility
+ * KDA Treats — WhatsApp Checkout Utility
  * Formats cart data into a WhatsApp message and opens the chat link.
  */
 
 import { formatPrice } from '../data/menu';
 import { WHATSAPP_NUMBER as WHATSAPP_NUMBER_CONFIG } from './api';
 
-// Replace with KDB Treats actual WhatsApp number
+// Replace with KDA Treats actual WhatsApp number
 const WHATSAPP_NUMBER = WHATSAPP_NUMBER_CONFIG;
 
 export function buildWhatsAppMessage({ items, totalPrice, customerName, customerAddress, customerNote }) {
@@ -14,7 +14,7 @@ export function buildWhatsAppMessage({ items, totalPrice, customerName, customer
     .map(item => `• ${item.name} (x${item.quantity}) — ${formatPrice(item.price * item.quantity)}`)
     .join('\n');
 
-  let message = `🍢 *New Order from KDB Treats*\n\n`;
+  let message = `🍢 *New Order from KDA Treats*\n\n`;
 
   if (customerName) {
     message += `👤 Name: ${customerName}\n`;

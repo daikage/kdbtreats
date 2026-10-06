@@ -1,5 +1,5 @@
 /* ============================================================
-   KDB Treats — Hero Section Styles
+   KDA Treats — Hero Section Styles
    ============================================================ */
 
 .hero {
@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--kdb-black);
+  background: var(--KDA-black);
 }
 
 .hero__bg {
@@ -35,7 +35,7 @@
   background:
     radial-gradient(ellipse at 30% 50%, rgba(212, 160, 23, 0.12) 0%, transparent 60%),
     radial-gradient(ellipse at 70% 30%, rgba(192, 57, 43, 0.08) 0%, transparent 50%),
-    linear-gradient(180deg, transparent 0%, rgba(13, 13, 13, 0.5) 60%, var(--kdb-black) 100%);
+    linear-gradient(180deg, transparent 0%, rgba(13, 13, 13, 0.5) 60%, var(--KDA-black) 100%);
 }
 
 .hero__content {
@@ -58,7 +58,7 @@
   font-weight: var(--fw-semibold);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   margin-bottom: var(--sp-xl);
   opacity: 0;
 }
@@ -68,7 +68,7 @@
   font-size: var(--fs-hero);
   font-weight: var(--fw-extrabold);
   line-height: var(--lh-tight);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   margin-bottom: var(--sp-lg);
 }
 
@@ -79,7 +79,7 @@
 }
 
 .hero__title .accent {
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   font-style: italic;
 }
 
@@ -124,7 +124,7 @@
 .hero__scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, var(--kdb-gold), transparent);
+  background: linear-gradient(to bottom, var(--KDA-gold), transparent);
   animation: breath 2s ease-in-out infinite;
 }
 
@@ -143,12 +143,41 @@
   filter: blur(1px);
 }
 
-.hero__float-item:nth-child(1) { top: 15%; left: 8%;  animation: float 8s ease-in-out infinite; }
-.hero__float-item:nth-child(2) { top: 25%; right: 10%; animation: float-delayed 9s ease-in-out infinite 0.5s; }
-.hero__float-item:nth-child(3) { bottom: 25%; left: 12%; animation: float 10s ease-in-out infinite 1s; }
-.hero__float-item:nth-child(4) { bottom: 20%; right: 15%; animation: float-delayed 7s ease-in-out infinite 1.5s; }
-.hero__float-item:nth-child(5) { top: 40%; left: 3%; animation: float-slow 11s ease-in-out infinite 0.8s; }
-.hero__float-item:nth-child(6) { top: 10%; right: 25%; animation: float 9s ease-in-out infinite 2s; }
+.hero__float-item:nth-child(1) {
+  top: 15%;
+  left: 8%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero__float-item:nth-child(2) {
+  top: 25%;
+  right: 10%;
+  animation: float-delayed 9s ease-in-out infinite 0.5s;
+}
+
+.hero__float-item:nth-child(3) {
+  bottom: 25%;
+  left: 12%;
+  animation: float 10s ease-in-out infinite 1s;
+}
+
+.hero__float-item:nth-child(4) {
+  bottom: 20%;
+  right: 15%;
+  animation: float-delayed 7s ease-in-out infinite 1.5s;
+}
+
+.hero__float-item:nth-child(5) {
+  top: 40%;
+  left: 3%;
+  animation: float-slow 11s ease-in-out infinite 0.8s;
+}
+
+.hero__float-item:nth-child(6) {
+  top: 10%;
+  right: 25%;
+  animation: float 9s ease-in-out infinite 2s;
+}
 
 /* ============================================================
    Featured Treats — Horizontal Scroll Section
@@ -157,7 +186,7 @@
 .featured {
   position: relative;
   overflow: hidden;
-  background: var(--kdb-charcoal);
+  background: var(--KDA-charcoal);
 }
 
 .featured__header {
@@ -170,7 +199,7 @@
   font-weight: var(--fw-semibold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   margin-bottom: var(--sp-md);
 }
 
@@ -178,7 +207,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-3xl);
   font-weight: var(--fw-bold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
 }
 
 .featured__track-wrapper {
@@ -200,7 +229,7 @@
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
   transition: transform var(--duration-slow) var(--ease-out),
-              box-shadow var(--duration-slow) var(--ease-out);
+    box-shadow var(--duration-slow) var(--ease-out);
   cursor: pointer;
 }
 
@@ -231,8 +260,8 @@
   top: var(--sp-md);
   right: var(--sp-md);
   padding: var(--sp-2xs) var(--sp-sm);
-  background: var(--kdb-gold);
-  color: var(--kdb-charcoal);
+  background: var(--KDA-gold);
+  color: var(--KDA-charcoal);
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
   border-radius: var(--radius-full);
@@ -247,7 +276,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   margin-bottom: var(--sp-xs);
 }
 
@@ -268,7 +297,7 @@
   font-family: var(--font-mono);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
 }
 
 .featured__card-add {
@@ -276,8 +305,8 @@
   height: 40px;
   border-radius: 50%;
   background: rgba(212, 160, 23, 0.1);
-  border: 1px solid var(--kdb-gold);
-  color: var(--kdb-gold);
+  border: 1px solid var(--KDA-gold);
+  color: var(--KDA-gold);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -286,8 +315,8 @@
 }
 
 .featured__card-add:hover {
-  background: var(--kdb-gold);
-  color: var(--kdb-charcoal);
+  background: var(--KDA-gold);
+  color: var(--KDA-charcoal);
   transform: scale(1.1);
 }
 
@@ -297,7 +326,7 @@
 
 .categories {
   position: relative;
-  background: var(--kdb-black);
+  background: var(--KDA-black);
 }
 
 .categories__grid {
@@ -348,7 +377,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   margin-bottom: var(--sp-xs);
 }
 
@@ -363,7 +392,7 @@
 
 .how-it-works {
   position: relative;
-  background: var(--kdb-charcoal);
+  background: var(--KDA-charcoal);
 }
 
 .how-it-works__steps {
@@ -380,7 +409,7 @@
   left: 15%;
   right: 15%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--kdb-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--KDA-gold), transparent);
   opacity: 0.3;
 }
 
@@ -394,8 +423,8 @@
   height: 60px;
   border-radius: 50%;
   background: rgba(212, 160, 23, 0.1);
-  border: 2px solid var(--kdb-gold);
-  color: var(--kdb-gold);
+  border: 2px solid var(--KDA-gold);
+  color: var(--KDA-gold);
   font-family: var(--font-mono);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
@@ -405,7 +434,7 @@
   margin: 0 auto var(--sp-lg);
   position: relative;
   z-index: 2;
-  background: var(--kdb-charcoal);
+  background: var(--KDA-charcoal);
 }
 
 .how-it-works__step-icon {
@@ -417,7 +446,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: var(--fw-semibold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   margin-bottom: var(--sp-xs);
 }
 
@@ -432,6 +461,7 @@
     grid-template-columns: 1fr;
     gap: var(--sp-2xl);
   }
+
   .how-it-works__steps::before {
     display: none;
   }
@@ -443,7 +473,7 @@
 
 .testimonials {
   position: relative;
-  background: var(--kdb-black);
+  background: var(--KDA-black);
   overflow: hidden;
 }
 
@@ -479,7 +509,7 @@
   content: '"';
   font-family: var(--font-display);
   font-size: var(--fs-2xl);
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   line-height: 0;
   vertical-align: -0.4em;
   margin-right: 4px;
@@ -495,23 +525,23 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--kdb-gold), var(--kdb-rust));
+  background: linear-gradient(135deg, var(--KDA-gold), var(--KDA-rust));
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
-  color: var(--kdb-charcoal);
+  color: var(--KDA-charcoal);
 }
 
 .testimonials__name {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
 }
 
 .testimonials__stars {
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   font-size: var(--fs-xs);
   letter-spacing: 2px;
 }
@@ -524,7 +554,7 @@
   position: relative;
   padding: var(--sp-5xl) 0;
   overflow: hidden;
-  background: var(--kdb-charcoal);
+  background: var(--KDA-charcoal);
 }
 
 .cta-banner__bg {
@@ -555,7 +585,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-3xl);
   font-weight: var(--fw-bold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   margin-bottom: var(--sp-md);
 }
 

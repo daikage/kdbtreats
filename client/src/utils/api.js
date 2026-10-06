@@ -1,5 +1,5 @@
 /**
- * KDB Treats — API client
+ * KDA Treats — API client
  * Thin wrapper around the Express backend with graceful fallbacks so the
  * site still works if the server is not running.
  */

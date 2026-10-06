@@ -13,8 +13,8 @@ const PORT = process.env.TEST_PORT || 4999;
 const BASE = `http://127.0.0.1:${PORT}/api`;
 
 // Run every test against a fresh, isolated database so test data never
-// leaks between runs or into the developer's local kdbtreats.db.
-const TEST_DB = path.join(os.tmpdir(), `kdbtreats-api-test-${process.pid}.db`);
+// leaks between runs or into the developer's local KDAtreats.db.
+const TEST_DB = path.join(os.tmpdir(), `KDAtreats-api-test-${process.pid}.db`);
 for (const suffix of ['', '-wal', '-shm']) {
   fs.rmSync(`${TEST_DB}${suffix}`, { force: true });
 }
@@ -50,11 +50,11 @@ async function api(method, endpoint, body) {
 const server = spawn(process.execPath, ['src/index.js'], {
   cwd: path.join(__dirname, '..'),
   env: {
-  ...process.env,
-  PORT: String(PORT),
-  ADMIN_PASSCODE: 'test-passcode',
-  SQLITE_PATH: TEST_DB,
-},
+    ...process.env,
+    PORT: String(PORT),
+    ADMIN_PASSCODE: 'test-passcode',
+    SQLITE_PATH: TEST_DB,
+  },
   stdio: 'ignore',
 });
 
@@ -188,7 +188,7 @@ test('Orders', 'POST /api/orders creates an order', async () => {
 test('Orders', 'Server recomputes total from DB price (ignores client price)', async () => {
   const r = await api('GET', `/orders/${orderId}`);
   return [r.data?.order?.totalPrice === samplePrice * 2,
-    `expected ${samplePrice * 2}, got ${r.data?.order?.totalPrice}`];
+  `expected ${samplePrice * 2}, got ${r.data?.order?.totalPrice}`];
 });
 
 test('Orders', 'GET /api/orders/:id returns order with items', async () => {
@@ -247,8 +247,8 @@ test('Admin', 'PUT /api/categories/:id updates name + slug', async () => {
   });
   return [
     r.status === 200
-      && r.data?.category?.name === 'Updated Category'
-      && r.data?.category?.slug === 'updated-category',
+    && r.data?.category?.name === 'Updated Category'
+    && r.data?.category?.slug === 'updated-category',
     r.status,
   ];
 });
@@ -277,8 +277,8 @@ test('Admin', 'PUT /api/menu/:id updates the item', async () => {
   });
   return [
     r.status === 200
-      && r.data?.item?.price === 1100
-      && r.data?.item?.spiceLevel === 2,
+    && r.data?.item?.price === 1100
+    && r.data?.item?.spiceLevel === 2,
     r.status,
   ];
 });
@@ -305,14 +305,14 @@ test('Admin', 'GET /api/admin/stats returns dashboard metrics', async () => {
   const s = r.data?.stats;
   return [
     r.status === 200
-      && typeof s?.totalRevenue === 'number'
-      && typeof s?.totalOrders === 'number'
-      && typeof s?.todayRevenue === 'number'
-      && typeof s?.unreadMessages === 'number'
-      && s?.statusBreakdown && typeof s.statusBreakdown.pending === 'number'
-      && Array.isArray(s?.dailySales) && s.dailySales.length === 7
-      && Array.isArray(s?.recentOrders)
-      && Array.isArray(s?.popularItems),
+    && typeof s?.totalRevenue === 'number'
+    && typeof s?.totalOrders === 'number'
+    && typeof s?.todayRevenue === 'number'
+    && typeof s?.unreadMessages === 'number'
+    && s?.statusBreakdown && typeof s.statusBreakdown.pending === 'number'
+    && Array.isArray(s?.dailySales) && s.dailySales.length === 7
+    && Array.isArray(s?.recentOrders)
+    && Array.isArray(s?.popularItems),
     `status ${r.status}`,
   ];
 });

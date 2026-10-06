@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="footer__top">
           {/* Brand Col */}
           <div>
-            <div className="footer__brand-name">KDB Treats</div>
+            <div className="footer__brand-name">KDA Treats</div>
             <p className="footer__brand-desc">
-              Authentic Nigerian snacks, small chops, and grills. 
+              Authentic Nigerian snacks, small chops, and grills.
               Elevating the culture, one bite at a time.
             </p>
             <div className="footer__socials">
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {currentYear} KDB Treats. All rights reserved.</p>
+          <p>&copy; {currentYear} KDA Treats. All rights reserved.</p>
           <p>Made with 💛 in Lagos</p>
         </div>
       </div>

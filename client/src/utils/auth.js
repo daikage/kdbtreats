@@ -4,7 +4,7 @@
  * survives client-side navigation but is dropped when the tab closes.
  */
 
-export const ADMIN_TOKEN_KEY = 'kdb_admin_token';
+export const ADMIN_TOKEN_KEY = 'KDA_admin_token';
 
 export function getAdminToken() {
   return sessionStorage.getItem(ADMIN_TOKEN_KEY);

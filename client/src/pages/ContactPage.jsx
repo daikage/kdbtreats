@@ -34,7 +34,7 @@ export default function ContactPage() {
   };
 
   const handleWhatsAppFallback = () => {
-    const msg = `Hello KDB Treats! My name is ${formData.name}. My email is ${formData.email}.\n\nMessage: ${formData.message}`;
+    const msg = `Hello KDA Treats! My name is ${formData.name}. My email is ${formData.email}.\n\nMessage: ${formData.message}`;
     const encoded = encodeURIComponent(msg);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
   };
@@ -48,7 +48,7 @@ export default function ContactPage() {
             <ScrollReveal animation="fade-up">
               <h1 className="page-hero__title">Get in Touch</h1>
               <p className="page-hero__subtitle">
-                Have a question about an order? Need catering for a large event? 
+                Have a question about an order? Need catering for a large event?
                 We're here to help.
               </p>
             </ScrollReveal>
@@ -62,39 +62,39 @@ export default function ContactPage() {
               <ScrollReveal animation="fade-right">
                 <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="contact-form__group">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       id="name"
-                      className="contact-form__input" 
+                      className="contact-form__input"
                       placeholder=" "
                       required
                       value={formData.name}
-                      onChange={e => setFormData({...formData, name: e.target.value})}
+                      onChange={e => setFormData({ ...formData, name: e.target.value })}
                     />
                     <label htmlFor="name" className="contact-form__label">Your Name</label>
                   </div>
-                  
+
                   <div className="contact-form__group">
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       id="email"
-                      className="contact-form__input" 
+                      className="contact-form__input"
                       placeholder=" "
                       required
                       value={formData.email}
-                      onChange={e => setFormData({...formData, email: e.target.value})}
+                      onChange={e => setFormData({ ...formData, email: e.target.value })}
                     />
                     <label htmlFor="email" className="contact-form__label">Email Address</label>
                   </div>
-                  
+
                   <div className="contact-form__group">
-                    <textarea 
+                    <textarea
                       id="message"
-                      className="contact-form__input contact-form__textarea" 
+                      className="contact-form__input contact-form__textarea"
                       placeholder=" "
                       required
                       value={formData.message}
-                      onChange={e => setFormData({...formData, message: e.target.value})}
+                      onChange={e => setFormData({ ...formData, message: e.target.value })}
                     />
                     <label htmlFor="message" className="contact-form__label">How can we help?</label>
                   </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   </MagneticButton>
 
                   {status === 'success' && (
-                    <p style={{ color: 'var(--kdb-gold)', marginTop: '1rem' }}>
+                    <p style={{ color: 'var(--KDA-gold)', marginTop: '1rem' }}>
                       Thanks! Your message has been received — we&apos;ll reply shortly.
                     </p>
                   )}
@@ -160,7 +160,7 @@ export default function ContactPage() {
                     <div className="contact-info__icon">✉️</div>
                     <div className="contact-info__label">Email</div>
                     <div className="contact-info__value">
-                      <a href="mailto:hello@kdbtreats.com">hello@kdbtreats.com</a>
+                      <a href="mailto:hello@KDAtreats.com">hello@KDAtreats.com</a>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -171,9 +171,9 @@ export default function ContactPage() {
                     <p className="contact-whatsapp__text">
                       For immediate assistance or urgent orders, reach out to us directly on WhatsApp.
                     </p>
-                    <MagneticButton 
-                      as="a" 
-                      href="https://wa.me/2348000000000" 
+                    <MagneticButton
+                      as="a"
+                      href="https://wa.me/2348000000000"
                       target="_blank"
                       className="btn--outline"
                       style={{ background: '#25D366', color: '#fff', borderColor: '#25D366' }}

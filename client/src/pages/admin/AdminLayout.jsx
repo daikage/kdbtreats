@@ -56,7 +56,7 @@ export default function AdminLayout() {
           unread: stats.unreadMessages ?? 0,
         });
       })
-      .catch(() => {});
+      .catch(() => { });
     return () => { active = false; };
   }, [authed, location.pathname]);
 
@@ -79,7 +79,7 @@ export default function AdminLayout() {
     <div className="admin">
       <aside className="admin__sidebar">
         <Link to="/admin" className="admin__brand">
-          KDB<span>Treats</span> <em>Admin</em>
+          KDA<span>Treats</span> <em>Admin</em>
         </Link>
 
         <nav className="admin__nav">

@@ -38,7 +38,7 @@ export default function AdminLogin({ onSuccess }) {
     <div className="admin-login-wrap">
       <form className="admin-login" onSubmit={handleSubmit}>
         <div className="admin-login__brand">
-          KDB<span>Treats</span> <em>Admin</em>
+          KDA<span>Treats</span> <em>Admin</em>
         </div>
 
         <h1 className="admin-login__title">Restricted area</h1>

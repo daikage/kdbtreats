@@ -53,39 +53,39 @@ export default function Preloader({ onComplete }) {
       ease: 'power3.out',
       delay: 0.3,
     })
-    // Subtitle fade in
-    .to(subRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power2.out',
-    }, '-=0.4')
-    // Phase 2: Progress bar fill
-    .to(progressRef.current, {
-      width: '100%',
-      duration: 1,
-      ease: 'power2.inOut',
-    }, '-=0.2')
-    // Phase 3: Hold briefly
-    .to({}, { duration: 0.3 })
-    // Phase 4: Logo scale up + fade
-    .to([logoRef.current, subRef.current, progressWrapRef.current], {
-      opacity: 0,
-      scale: 1.1,
-      duration: 0.5,
-      ease: 'power2.in',
-    })
-    // Phase 5: Curtain split
-    .to(curtainTopRef.current, {
-      y: '-100%',
-      duration: 0.8,
-      ease: 'power3.inOut',
-    }, '-=0.2')
-    .to(curtainBottomRef.current, {
-      y: '100%',
-      duration: 0.8,
-      ease: 'power3.inOut',
-    }, '<');
+      // Subtitle fade in
+      .to(subRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+      }, '-=0.4')
+      // Phase 2: Progress bar fill
+      .to(progressRef.current, {
+        width: '100%',
+        duration: 1,
+        ease: 'power2.inOut',
+      }, '-=0.2')
+      // Phase 3: Hold briefly
+      .to({}, { duration: 0.3 })
+      // Phase 4: Logo scale up + fade
+      .to([logoRef.current, subRef.current, progressWrapRef.current], {
+        opacity: 0,
+        scale: 1.1,
+        duration: 0.5,
+        ease: 'power2.in',
+      })
+      // Phase 5: Curtain split
+      .to(curtainTopRef.current, {
+        y: '-100%',
+        duration: 0.8,
+        ease: 'power3.inOut',
+      }, '-=0.2')
+      .to(curtainBottomRef.current, {
+        y: '100%',
+        duration: 0.8,
+        ease: 'power3.inOut',
+      }, '<');
 
     return () => tl.kill();
   }, []);
@@ -102,7 +102,7 @@ export default function Preloader({ onComplete }) {
           className="preloader__logo"
           style={{ opacity: 0, transform: 'scale(0.7) translateY(20px)', filter: 'blur(10px)' }}
         >
-          KDB
+          KDA
           <span
             ref={subRef}
             className="preloader__logo-sub"

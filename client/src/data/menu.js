@@ -1,5 +1,5 @@
 /**
- * KDB Treats — Menu Data
+ * KDA Treats — Menu Data
  * Hardcoded seed data for initial development.
  * Will be replaced with API calls once the backend is built.
  */
@@ -196,7 +196,7 @@ export const menuItems = [
 export const testimonials = [
   {
     id: 1,
-    quote: "KDB Treats catered our wedding and every single guest was raving about the small chops! The puff puff was divine.",
+    quote: "KDA Treats catered our wedding and every single guest was raving about the small chops! The puff puff was divine.",
     author: "Chioma A.",
     initials: "CA",
     rating: 5,
@@ -231,7 +231,7 @@ export const testimonials = [
   },
   {
     id: 6,
-    quote: "KDB never disappoints. Whether it's a small order or a big party, the quality is always consistent.",
+    quote: "KDA never disappoints. Whether it's a small order or a big party, the quality is always consistent.",
     author: "Yusuf M.",
     initials: "YM",
     rating: 5,
@@ -242,7 +242,7 @@ export const timelineEvents = [
   {
     year: '2020',
     title: 'The Kitchen Dream',
-    description: 'KDB Treats started as a small home kitchen operation, making small chops for friends and family.',
+    description: 'KDA Treats started as a small home kitchen operation, making small chops for friends and family.',
   },
   {
     year: '2021',
@@ -257,7 +257,7 @@ export const timelineEvents = [
   {
     year: '2023',
     title: 'Event Catering',
-    description: 'KDB became the go-to caterer for weddings, birthdays, and corporate events in Lagos.',
+    description: 'KDA became the go-to caterer for weddings, birthdays, and corporate events in Lagos.',
   },
   {
     year: '2024',

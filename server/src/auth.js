@@ -11,9 +11,9 @@
  */
 import crypto from 'node:crypto';
 
-const DEFAULT_PASSCODE = 'kdbtreats-admin';
+const DEFAULT_PASSCODE = 'KDAtreats-admin';
 const TOKEN_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
-const ISSUER = 'kdbtreats-admin';
+const ISSUER = 'KDAtreats-admin';
 
 let warned = false;
 

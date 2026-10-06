@@ -1,80 +1,80 @@
 /* ============================================================
-   KDB Treats — Design Tokens
+   KDA Treats — Design Tokens
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
   /* ── Palette ─────────────────────────────────────── */
-  --kdb-gold:        #D4A017;
-  --kdb-gold-light:  #F0C75E;
-  --kdb-gold-dark:   #A67C00;
-  --kdb-cream:       #FFF8E7;
-  --kdb-cream-dark:  #F5E6C8;
-  --kdb-charcoal:    #1A1A1A;
-  --kdb-charcoal-light: #2A2A2A;
-  --kdb-rust:        #C0392B;
-  --kdb-rust-light:  #E74C3C;
-  --kdb-brown:       #5D3A1A;
-  --kdb-brown-light: #8B5E3C;
-  --kdb-white:       #FEFEFE;
-  --kdb-black:       #0D0D0D;
-  --kdb-grey-100:    #F5F5F5;
-  --kdb-grey-200:    #E0E0E0;
-  --kdb-grey-300:    #BDBDBD;
-  --kdb-grey-400:    #9E9E9E;
-  --kdb-grey-500:    #757575;
-  --kdb-grey-600:    #424242;
-  --kdb-grey-700:    #303030;
+  --KDA-gold: #D4A017;
+  --KDA-gold-light: #F0C75E;
+  --KDA-gold-dark: #A67C00;
+  --KDA-cream: #FFF8E7;
+  --KDA-cream-dark: #F5E6C8;
+  --KDA-charcoal: #1A1A1A;
+  --KDA-charcoal-light: #2A2A2A;
+  --KDA-rust: #C0392B;
+  --KDA-rust-light: #E74C3C;
+  --KDA-brown: #5D3A1A;
+  --KDA-brown-light: #8B5E3C;
+  --KDA-white: #FEFEFE;
+  --KDA-black: #0D0D0D;
+  --KDA-grey-100: #F5F5F5;
+  --KDA-grey-200: #E0E0E0;
+  --KDA-grey-300: #BDBDBD;
+  --KDA-grey-400: #9E9E9E;
+  --KDA-grey-500: #757575;
+  --KDA-grey-600: #424242;
+  --KDA-grey-700: #303030;
 
   /* ── Semantic colors ─────────────────────────────── */
-  --color-bg:          var(--kdb-charcoal);
-  --color-bg-elevated: var(--kdb-charcoal-light);
-  --color-surface:     rgba(255, 248, 231, 0.04);
+  --color-bg: var(--KDA-charcoal);
+  --color-bg-elevated: var(--KDA-charcoal-light);
+  --color-surface: rgba(255, 248, 231, 0.04);
   --color-surface-hover: rgba(255, 248, 231, 0.08);
-  --color-text:        var(--kdb-cream);
-  --color-text-muted:  var(--kdb-grey-400);
-  --color-text-subtle: var(--kdb-grey-500);
-  --color-accent:      var(--kdb-gold);
-  --color-accent-hover: var(--kdb-gold-light);
-  --color-danger:      var(--kdb-rust);
-  --color-border:      rgba(212, 160, 23, 0.15);
+  --color-text: var(--KDA-cream);
+  --color-text-muted: var(--KDA-grey-400);
+  --color-text-subtle: var(--KDA-grey-500);
+  --color-accent: var(--KDA-gold);
+  --color-accent-hover: var(--KDA-gold-light);
+  --color-danger: var(--KDA-rust);
+  --color-border: rgba(212, 160, 23, 0.15);
   --color-border-hover: rgba(212, 160, 23, 0.35);
 
   /* ── Typography ──────────────────────────────────── */
   --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono:    'Space Grotesk', 'SF Mono', monospace;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Grotesk', 'SF Mono', monospace;
 
-  --fs-xs:   clamp(0.7rem,  0.65rem + 0.25vw, 0.8rem);
-  --fs-sm:   clamp(0.8rem,  0.75rem + 0.3vw,  0.9rem);
-  --fs-base: clamp(0.9rem,  0.85rem + 0.3vw,  1rem);
-  --fs-md:   clamp(1rem,    0.9rem  + 0.5vw,  1.2rem);
-  --fs-lg:   clamp(1.2rem,  1rem    + 0.8vw,  1.6rem);
-  --fs-xl:   clamp(1.6rem,  1.2rem  + 1.5vw,  2.4rem);
-  --fs-2xl:  clamp(2rem,    1.5rem  + 2vw,    3.2rem);
-  --fs-3xl:  clamp(2.8rem,  2rem    + 3vw,    4.5rem);
-  --fs-hero: clamp(3.5rem,  2.5rem  + 5vw,    7rem);
+  --fs-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --fs-sm: clamp(0.8rem, 0.75rem + 0.3vw, 0.9rem);
+  --fs-base: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
+  --fs-md: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+  --fs-lg: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+  --fs-xl: clamp(1.6rem, 1.2rem + 1.5vw, 2.4rem);
+  --fs-2xl: clamp(2rem, 1.5rem + 2vw, 3.2rem);
+  --fs-3xl: clamp(2.8rem, 2rem + 3vw, 4.5rem);
+  --fs-hero: clamp(3.5rem, 2.5rem + 5vw, 7rem);
 
-  --lh-tight:   1.1;
-  --lh-snug:    1.25;
-  --lh-normal:  1.5;
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
   --lh-relaxed: 1.65;
 
-  --fw-light:    300;
-  --fw-regular:  400;
-  --fw-medium:   500;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
   --fw-semibold: 600;
-  --fw-bold:     700;
+  --fw-bold: 700;
   --fw-extrabold: 800;
 
   /* ── Spacing ─────────────────────────────────────── */
   --sp-2xs: 0.25rem;
-  --sp-xs:  0.5rem;
-  --sp-sm:  0.75rem;
-  --sp-md:  1rem;
-  --sp-lg:  1.5rem;
-  --sp-xl:  2rem;
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-md: 1rem;
+  --sp-lg: 1.5rem;
+  --sp-xl: 2rem;
   --sp-2xl: 3rem;
   --sp-3xl: 4rem;
   --sp-4xl: 6rem;
@@ -82,46 +82,46 @@
   --sp-section: clamp(5rem, 8vw, 10rem);
 
   /* ── Border Radius ───────────────────────────────── */
-  --radius-sm:   0.375rem;
-  --radius-md:   0.625rem;
-  --radius-lg:   1rem;
-  --radius-xl:   1.5rem;
-  --radius-2xl:  2rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
   --radius-full: 9999px;
 
   /* ── Shadows ─────────────────────────────────────── */
-  --shadow-sm:   0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-  --shadow-md:   0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
-  --shadow-lg:   0 10px 30px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.2);
-  --shadow-xl:   0 20px 50px rgba(0,0,0,0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 30px rgba(212, 160, 23, 0.3), 0 0 60px rgba(212, 160, 23, 0.15);
   --shadow-glow-strong: 0 0 40px rgba(212, 160, 23, 0.5), 0 0 80px rgba(212, 160, 23, 0.25);
 
   /* ── Transitions ─────────────────────────────────── */
-  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-smooth:   cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
 
-  --duration-fast:   150ms;
+  --duration-fast: 150ms;
   --duration-normal: 300ms;
-  --duration-slow:   500ms;
+  --duration-slow: 500ms;
   --duration-slower: 800ms;
 
   /* ── Z-index ─────────────────────────────────────── */
-  --z-behind:    -1;
-  --z-base:      0;
-  --z-elevated:  10;
-  --z-sticky:    100;
-  --z-nav:       200;
-  --z-drawer:    300;
-  --z-overlay:   400;
-  --z-modal:     500;
-  --z-cursor:    900;
+  --z-behind: -1;
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-overlay: 300;
+  --z-drawer: 400;
+  --z-modal: 500;
+  --z-cursor: 900;
   --z-preloader: 1000;
 
   /* ── Layout ──────────────────────────────────────── */
-  --max-width:     1280px;
-  --max-width-sm:  960px;
-  --nav-height:    5rem;
+  --max-width: 1280px;
+  --max-width-sm: 960px;
+  --nav-height: 5rem;
 }

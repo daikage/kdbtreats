@@ -1,13 +1,14 @@
 /* ============================================================
-   KDB Treats — Cart Drawer Styles
+   KDA Treats — Cart Drawer Styles
    ============================================================ */
 
+/* Invisible click-catcher — must stay BELOW .cart-drawer (see tokens.css).
+   No dim/blur, so nothing covers the screen while viewing the cart. */
 .cart-overlay {
   position: fixed;
   inset: 0;
   z-index: var(--z-overlay);
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  background: transparent;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--duration-normal) var(--ease-out);
@@ -25,7 +26,7 @@
   bottom: 0;
   width: min(440px, 90vw);
   z-index: var(--z-drawer);
-  background: var(--kdb-charcoal);
+  background: var(--KDA-charcoal);
   border-left: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
@@ -50,7 +51,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
 }
 
 .cart-drawer__count {
@@ -74,8 +75,8 @@
 }
 
 .cart-drawer__close:hover {
-  color: var(--kdb-cream);
-  border-color: var(--kdb-cream);
+  color: var(--KDA-cream);
+  border-color: var(--KDA-cream);
 }
 
 /* ── Cart items list ───────────────────────────────── */
@@ -112,7 +113,7 @@
 .cart-item__name {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   margin-bottom: var(--sp-2xs);
   white-space: nowrap;
   overflow: hidden;
@@ -122,7 +123,7 @@
 .cart-item__price {
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   margin-bottom: var(--sp-sm);
 }
 
@@ -138,7 +139,7 @@
   border-radius: 50%;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   font-size: 0.9rem;
   display: flex;
   align-items: center;
@@ -147,15 +148,15 @@
 }
 
 .cart-item__qty-btn:hover {
-  border-color: var(--kdb-gold);
-  color: var(--kdb-gold);
+  border-color: var(--KDA-gold);
+  color: var(--KDA-gold);
 }
 
 .cart-item__qty {
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   min-width: 24px;
   text-align: center;
 }
@@ -168,7 +169,7 @@
 }
 
 .cart-item__remove:hover {
-  color: var(--kdb-rust);
+  color: var(--KDA-rust);
 }
 
 /* ── Empty cart ────────────────────────────────────── */
@@ -193,14 +194,14 @@
 
 .cart-drawer__empty-cta {
   font-size: var(--fs-sm);
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
 }
 
 /* ── Cart footer ───────────────────────────────────── */
 .cart-drawer__footer {
   padding: var(--sp-xl);
   border-top: 1px solid var(--color-border);
-  background: var(--kdb-black);
+  background: var(--KDA-black);
 }
 
 .cart-drawer__subtotal {
@@ -218,7 +219,7 @@
 .cart-drawer__subtotal-value {
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
 }
 
 .cart-drawer__total {
@@ -233,14 +234,14 @@
 .cart-drawer__total-label {
   font-size: var(--fs-md);
   font-weight: var(--fw-semibold);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
 }
 
 .cart-drawer__total-value {
   font-family: var(--font-mono);
   font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
 }
 
 /* ── Customer info ─────────────────────────────────── */
@@ -256,7 +257,7 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  color: var(--kdb-cream);
+  color: var(--KDA-cream);
   font-size: var(--fs-sm);
   outline: none;
   transition: border-color var(--duration-fast) var(--ease-out);
@@ -267,7 +268,7 @@
 }
 
 .cart-drawer__input:focus {
-  border-color: var(--kdb-gold);
+  border-color: var(--KDA-gold);
 }
 
 .cart-drawer__textarea {

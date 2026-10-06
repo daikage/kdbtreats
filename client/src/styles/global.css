@@ -1,5 +1,5 @@
 /* ============================================================
-   KDB Treats — Global Styles
+   KDA Treats — Global Styles
    ============================================================ */
 
 body {
@@ -12,6 +12,7 @@ body {
 
 /* ── Custom Cursor ─────────────────────────────────── */
 @media (pointer: fine) {
+
   body.has-custom-cursor,
   body.has-custom-cursor * {
     cursor: none !important;
@@ -24,7 +25,7 @@ body {
   left: 0;
   width: 8px;
   height: 8px;
-  background: var(--kdb-gold);
+  background: var(--KDA-gold);
   border-radius: 50%;
   pointer-events: none;
   z-index: var(--z-cursor);
@@ -44,22 +45,22 @@ body {
   z-index: var(--z-cursor);
   transform: translate(-50%, -50%);
   transition: width 0.3s var(--ease-out),
-              height 0.3s var(--ease-out),
-              border-color 0.3s var(--ease-out),
-              background 0.3s var(--ease-out);
+    height 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    background 0.3s var(--ease-out);
 }
 
 .cursor-ring.is-hovering {
   width: 60px;
   height: 60px;
-  border-color: var(--kdb-gold);
+  border-color: var(--KDA-gold);
   background: rgba(212, 160, 23, 0.08);
 }
 
 .cursor-ring.is-clicking {
   width: 30px;
   height: 30px;
-  border-color: var(--kdb-gold-light);
+  border-color: var(--KDA-gold-light);
 }
 
 /* ── Custom Scrollbar ──────────────────────────────── */
@@ -68,22 +69,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--kdb-charcoal);
+  background: var(--KDA-charcoal);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--kdb-gold-dark);
+  background: var(--KDA-gold-dark);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--kdb-gold);
+  background: var(--KDA-gold);
 }
 
 /* ── Selection ─────────────────────────────────────── */
 ::selection {
-  background: var(--kdb-gold);
-  color: var(--kdb-charcoal);
+  background: var(--KDA-gold);
+  color: var(--KDA-charcoal);
 }
 
 /* ── Container ─────────────────────────────────────── */
@@ -112,7 +113,7 @@ body {
 }
 
 .heading-display .accent {
-  color: var(--kdb-gold);
+  color: var(--KDA-gold);
   font-style: italic;
 }
 
@@ -134,7 +135,7 @@ body {
 
 /* ── Gradient text ─────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--kdb-gold-light), var(--kdb-gold), var(--kdb-rust-light));
+  background: linear-gradient(135deg, var(--KDA-gold-light), var(--KDA-gold), var(--KDA-rust-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -159,24 +160,24 @@ body {
 }
 
 .btn--primary {
-  background: var(--kdb-gold);
-  color: var(--kdb-charcoal);
+  background: var(--KDA-gold);
+  color: var(--KDA-charcoal);
 }
 
 .btn--primary:hover {
-  background: var(--kdb-gold-light);
+  background: var(--KDA-gold-light);
   box-shadow: var(--shadow-glow);
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--kdb-gold);
-  border: 1.5px solid var(--kdb-gold);
+  color: var(--KDA-gold);
+  border: 1.5px solid var(--KDA-gold);
 }
 
 .btn--outline:hover {
   background: rgba(212, 160, 23, 0.1);
-  border-color: var(--kdb-gold-light);
+  border-color: var(--KDA-gold-light);
 }
 
 .btn--lg {

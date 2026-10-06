@@ -58,6 +58,7 @@ export default function CartDrawer() {
       });
 
       clearCart();
+      closeCart();
       setCheckoutState('done');
     } catch (err) {
       // Backend unreachable — still let the customer order via WhatsApp.
@@ -70,6 +71,7 @@ export default function CartDrawer() {
         customerNote,
       });
       clearCart();
+      closeCart();
       setCheckoutState('error');
     }
   };

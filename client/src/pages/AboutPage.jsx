@@ -20,12 +20,12 @@ export default function AboutPage() {
                     <SplitText text="Born in Lagos, Made for the *World*" />
                   </h2>
                   <p className="story-section__text">
-                    KDB Treats started with a simple belief: authentic Nigerian flavors shouldn't be hard to find. 
-                    What began as a small home kitchen making puff puff for weekend family gatherings has blossomed 
+                    KDA Treats started with a simple belief: authentic Nigerian flavors shouldn't be hard to find.
+                    What began as a small home kitchen making puff puff for weekend family gatherings has blossomed
                     into a full-scale culinary experience.
                   </p>
                   <p className="story-section__text">
-                    We source our spices directly from local markets, ensuring every bite of our suya and every 
+                    We source our spices directly from local markets, ensuring every bite of our suya and every
                     crunch of our chin chin carries the true essence of home.
                   </p>
                 </ScrollReveal>
@@ -49,8 +49,8 @@ export default function AboutPage() {
                     No Shortcuts. Just *Good Food*.
                   </h2>
                   <p className="story-section__text">
-                    In a world of fast food and automated production, we still believe in the art of handcrafting. 
-                    Our dough is kneaded daily, our meats are marinated overnight in our secret yaji spice blend, 
+                    In a world of fast food and automated production, we still believe in the art of handcrafting.
+                    Our dough is kneaded daily, our meats are marinated overnight in our secret yaji spice blend,
                     and everything is made to order.
                   </p>
                 </ScrollReveal>

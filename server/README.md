@@ -1,6 +1,6 @@
-# KDB Treats — Server
+# KDA Treats — Server
 
-Express + SQLite REST API for the KDB Treats storefront.
+Express + SQLite REST API for the KDA Treats storefront.
 
 ## Stack
 
@@ -19,7 +19,7 @@ npm run seed     # populate an empty database
 npm run test:api # run the end-to-end API tests
 ```
 
-The database file is created automatically at `data/kdbtreats.db` on first run.
+The database file is created automatically at `data/KDAtreats.db` on first run.
 Seeding runs automatically at startup only when the database is empty, so admin
 edits (prices, availability) are never silently overwritten on restart. Use
 `npm run seed -- --force` to deliberately rebuild the catalogue.
@@ -104,7 +104,7 @@ The admin panel and admin endpoints are protected by a shared passcode.
 | ------ | ---------------- | ------------------------------------------------------ |
 | POST   | `/admin/login`   | Body `{ "passcode": "…" }` → `{ "token": "…" }`        |
 
-1. Set `ADMIN_PASSCODE` (defaults to `kdbtreats-admin` with a console warning —
+1. Set `ADMIN_PASSCODE` (defaults to `KDAtreats-admin` with a console warning —
    change it before going live).
 2. `POST /api/admin/login` returns a stateless HMAC-signed token (12h expiry).
 3. Send it on every protected request: `Authorization: Bearer <token>`.
@@ -122,8 +122,8 @@ Public endpoints (no token needed): `GET /menu`, `GET /menu/:id`,
 | Variable      | Default                 | Description                        |
 | ------------- | ----------------------- | ---------------------------------- |
 | `PORT`        | `4000`                  | HTTP port                          |
-| `ADMIN_PASSCODE` | `kdbtreats-admin`    | Passcode for the admin panel       |
-| `SQLITE_PATH` | `data/kdbtreats.db`     | SQLite file location               |
+| `ADMIN_PASSCODE` | `KDAtreats-admin`    | Passcode for the admin panel       |
+| `SQLITE_PATH` | `data/KDAtreats.db`     | SQLite file location               |
 | `DATABASE_URL`| —                       | `postgres://…` enables Postgres    |
 | `CORS_ORIGIN` | reflect request origin  | Allowed client origin              |
 
